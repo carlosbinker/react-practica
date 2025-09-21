@@ -14,7 +14,7 @@ function App() {
         {/* Le paso las props entre {} al componente Boton*/}
         <Boton texto={"Aceptar"} color={"green"} />
         <Boton texto={"Cancelar"} color={"red"} />
-        <Item1 nombre={"pantalon"} precio={5000} />
+        <Item1 nombre={prod.nombre} precio={prod.precio} />
         <Item2 item={prod} />
       </div>
     </>
