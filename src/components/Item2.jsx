@@ -8,3 +8,6 @@ export const Item2 = ({ item }) => {
         </article>
     )
 };
+
+//Montaje: pasando el objeto en una props "item"
+//<Item2 item={prod}/>

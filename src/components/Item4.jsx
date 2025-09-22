@@ -10,5 +10,7 @@ export const Item4 = ({ nombre, precio, destacado }) => {
         </article>
 
     );
-
 };
+
+// Montaje: spread + props extra
+// <Item4 {...prod} destacado={true} />;

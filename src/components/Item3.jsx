@@ -12,3 +12,6 @@ export const Item3 = ({ nombre, precio, descripcion }) => {
     </article>)
     
 };
+
+//Montaje: usando spread operator
+// <Item3 {...prod} />
