@@ -17,7 +17,15 @@ function App() {
         {/* Le paso las props entre {} al componente Boton*/}
         <Boton texto={"Aceptar"} color={"green"} />
         <Boton texto={"Cancelar"} color={"red"} />
-        <Item1 nombre={prod.nombre} precio={prod.precio} descripcion={prod.descripcion} />
+        <Item1
+          nombre={prod.nombre}
+          precio={prod.precio}
+          descripcion={prod.descripcion}>
+          
+          <button>Un boton</button>
+
+        </Item1>
+
         {/* Pasando el objeto prod en una props "item" */}
         <Item2 item={prod} />
         {/* Le paso las props por medio de un spread operator */}

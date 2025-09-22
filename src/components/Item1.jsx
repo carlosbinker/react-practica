@@ -4,7 +4,7 @@
 //Fue comparado con "Item3" que al pasar props con spread operator {...prod}
 //no necesitaba modificar el montaje, sino sólo agregar la props "descripcion"
 
-export const Item1 = ({ nombre, precio, descripcion }) => {
+export const Item1 = ({ nombre, precio, descripcion, children }) => {
     
     return (
         
@@ -12,8 +12,10 @@ export const Item1 = ({ nombre, precio, descripcion }) => {
 
         <p>Item 1</p>
         <p>{nombre}</p>
-            <p>Precio: $ {precio}</p>
-            <p>Descripcion: {descripcion}</p>
+        <p>Precio: $ {precio}</p>
+        <p>Descripcion: {descripcion}</p>
+            
+        {children}
 
     </article>)
     
