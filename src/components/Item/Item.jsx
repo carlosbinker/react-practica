@@ -1,4 +1,5 @@
-export const Item = ({id, nombre, precio, descripcion}) => {
+ //recordamos el uso del children, no es obligatorio que esté
+export const Item = ({ id, nombre, precio, descripcion, children }) => {
     return (
         <>
             
@@ -7,6 +8,7 @@ export const Item = ({id, nombre, precio, descripcion}) => {
                 <h2>{nombre}</h2>
                 <p>Precio: {precio}</p>
                 <p>Descripción: {descripcion}</p>
+                {children}
             </article>
         </>
     );
