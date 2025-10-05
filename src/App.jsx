@@ -2,6 +2,7 @@ import './App.css'
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { ItemlistContainer } from './components/ItemListContainer/ItemListContainer';
+import Contador from './components/Test/Test';
 
 function App() {
   
@@ -37,6 +38,7 @@ function App() {
           titulo={"Bienvenidos a la tienda de Embark"}
           productos={arrayProductos}
         />
+        <Contador/>
         <Footer/>
       </div>
     </>
