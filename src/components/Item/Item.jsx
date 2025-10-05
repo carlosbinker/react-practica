@@ -1,12 +1,12 @@
-export const Item = ({item}) => {
+export const Item = ({id, nombre, precio, descripcion}) => {
     return (
         <>
             
             {/* Utilizo una key para que cada article esté identificado de manera única en el dom y va en el padre! */}
-            <article key={item.id}>
-                <h2>{item.nombre}</h2>
-                <p>Precio: {item.precio}</p>
-                <p>Descripción: {item.descripcion}</p>
+            <article key={id}>
+                <h2>{nombre}</h2>
+                <p>Precio: {precio}</p>
+                <p>Descripción: {descripcion}</p>
             </article>
         </>
     );

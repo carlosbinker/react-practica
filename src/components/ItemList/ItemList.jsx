@@ -8,7 +8,7 @@ export const ItemList = ({ lista }) => {
     return (
         <>
             {lista.length ? (
-                lista.map((prod) => <Item key={prod.id} item={ prod} />)
+                lista.map((prod) => <Item key={prod.id} {...prod} />)
                 
             ) : <p>No hay productos</p>}
         </>
