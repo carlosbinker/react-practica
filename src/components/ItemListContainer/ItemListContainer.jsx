@@ -15,7 +15,17 @@ export const ItemlistContainer = ({ titulo, productos }) => {
 
         <section>
             <h1>{titulo}</h1>
-            {productos.length ? <article></article> : <p>No hay productos</p>}
+            {/* Defino un ternario */}
+            {productos.length ? (
+                
+                productos.map((prod) => (
+                    // Utilizo una key para que cada article esté identificado de manera única en el dom
+                    <article key={prod.id}>
+                        <h2>{prod.nombre}</h2>
+                        <p>Precio: {prod.precio}</p>
+                        <p>Descripción: { prod.descripcion}</p>
+                    </article>))
+                ) : <p>No hay productos</p>}
         </section>
 
     );

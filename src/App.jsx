@@ -4,10 +4,9 @@ import { Header } from './components/Header/Header';
 import { ItemlistContainer } from './components/ItemListContainer/ItemListContainer';
 
 function App() {
-  // const prod = { nombre: "remera", precio: 10000, descripcion: "Remera de alto impacto deportivo" }
-
+  
   //PROVISORAMENTE uso este array como si fuese un estado
-  const arrayProductos = [
+   const arrayProductos = [
     {
       id: 1,
       nombre: "Remera",
@@ -18,15 +17,16 @@ function App() {
       id: 2,
       nombre: "Pantalon",
       precio: 80000,
-      descripcion: "Pantalon de jean"
+      descripcion: "Pantalon de jean",
     },
     {
       id: 3,
       nombre: "zapatillas",
       precio: 110000,
-      descripcion: "Zapatillas deportivas"
-    }
+      descripcion: "Zapatillas deportivas",
+    },
   ];
+  //const prod = { nombre: "Remera", precio: 10000, descripcion: "LALALA" };
  
   return (
     <>
