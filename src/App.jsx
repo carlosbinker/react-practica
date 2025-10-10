@@ -2,7 +2,7 @@ import './App.css'
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { ItemlistContainer } from './components/ItemListContainer/ItemListContainer';
-import Contador from './components/Test/Test';
+import Contador from './components/Contador/Contador';
 
 function App() {
   
