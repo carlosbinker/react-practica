@@ -17,7 +17,7 @@ const Form = () => {
     Esta forma utiliza una funcion con un parametro que siempre traera el ultimo valor del estado
     antes de actualizar con lo nuevo*/
 
-    //setUser((prev) => ({ ...prev, [name]: value }));
+    setUser((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -52,7 +52,7 @@ const Form = () => {
         name="pass" //necesitamos el atributo name
         value={user.pass}
         onChange={handleChange}
-        placeholder="Ingresa contraseña"
+        placeholder="Ingresa tu contraseña"
         required
       />
       <button type="submit">Enviar</button>
