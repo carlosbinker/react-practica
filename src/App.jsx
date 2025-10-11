@@ -6,6 +6,7 @@ import Contador from './components/Contador/Contador';
 import Form from './components/Form/Form';
 import { Boton } from './components/Boton';
 import EjemploMouse from './components/EjemploMouse';
+import EjemploMouse2 from './components/EjemploMouse2';
 
 function App() {
   
@@ -44,7 +45,7 @@ function App() {
         <Contador />
         {/* <Form /> */}
         <Boton texto={"Soy un botón GIL!"} color={"red"} />
-        <EjemploMouse/>
+        <EjemploMouse2/>
         <Footer />
       </div>
     </>
