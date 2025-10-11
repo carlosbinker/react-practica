@@ -4,6 +4,7 @@ import { Header } from './components/Header/Header';
 import { ItemlistContainer } from './components/ItemListContainer/ItemListContainer';
 import Contador from './components/Contador/Contador';
 import Form from './components/Form/Form';
+import { Boton } from './components/Boton';
 
 function App() {
   
@@ -40,7 +41,8 @@ function App() {
           productos={arrayProductos}
         />
         <Contador />
-        <Form/>
+        <Form />
+        <Boton texto={"Soy un botón GIL!"} color={ "red"} />
         <Footer/>
       </div>
     </>
