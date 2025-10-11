@@ -5,6 +5,7 @@ import { ItemlistContainer } from './components/ItemListContainer/ItemListContai
 import Contador from './components/Contador/Contador';
 import Form from './components/Form/Form';
 import { Boton } from './components/Boton';
+import EjemploMouse from './components/EjemploMouse';
 
 function App() {
   
@@ -36,14 +37,15 @@ function App() {
       <div>
         {/* Hacemos el autoclose de los componenetes porque no hay childrens */}
         <Header /> 
-        <ItemlistContainer
+        {/* <ItemlistContainer
           titulo={"Bienvenidos a la tienda de Embark"}
           productos={arrayProductos}
-        />
+        /> */}
         <Contador />
-        <Form />
-        <Boton texto={"Soy un botón GIL!"} color={ "red"} />
-        <Footer/>
+        {/* <Form /> */}
+        <Boton texto={"Soy un botón GIL!"} color={"red"} />
+        <EjemploMouse/>
+        <Footer />
       </div>
     </>
   );
