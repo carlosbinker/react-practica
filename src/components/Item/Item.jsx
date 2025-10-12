@@ -1,13 +1,15 @@
- //recordamos el uso del children, no es obligatorio que esté
-export const Item = ({ id, nombre, precio, descripcion, children }) => {
+//recordamos el uso del children, no es obligatorio que esté
+import "./Item.css";
+
+export const Item = ({ name, price, description, imageUrl, children }) => {
     return (
-        <>
-            
+        <>       
             {/* Utilizo una key para que cada article esté identificado de manera única en el dom y va en el padre! */}
-            <article key={id}>
-                <h2>{nombre}</h2>
-                <p>Precio: {precio}</p>
-                <p>Descripción: {descripcion}</p>
+            <article className="product-item">
+               <img src={imageUrl} alt={description} /> 
+                <h2 className="product-title">{name}</h2>
+                <p>Precio: {price}</p>
+                <p>Descripción: {description}</p>
                 {children}
             </article>
         </>

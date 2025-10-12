@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "name": "Breakfast",
+    "price": 7200,
+    "category": "salado",
+    "description": "Huevos fritos servidos en el desayuno con rodajas de pan lactal integral",
+    "imageUrl": "/images/breakfast.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Cake",
+    "price": 9600,
+    "category": "dulce",
+    "description": "Chesscake con cobertura de chocolate",
+    "imageUrl": "/images/cake.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Cupcake",
+    "category": "dulce",
+    "price": 6500,
+    "description": "Delicioso Muffin de vainilla glaseada con copos de chocolate crocante en cobertura",
+    "imageUrl": "/images/cupcake.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Pizza",
+    "category": "salado",
+    "price": 15900,
+    "description": "Riquísima pizza de muzarella media masa crocante con orégano",
+    "imageUrl": "/images/pizza.jpg"
+  }
+]
