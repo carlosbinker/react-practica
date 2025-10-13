@@ -14,7 +14,7 @@ export const ItemDetailContainer = () => {
         return res.json();
       })
       .then((data) => {
-        const found = data.find((p) => p.id === "2");
+        const found = data.find((p) => p.id === "4");
         if (found) {
           setDetail(found);
         } else {
