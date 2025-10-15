@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 
 export const ItemDetailContainer = () => {
   const [detail, setDetail] = useState({});
+
+  // Capturo el id de la URL dinámica
+  const { id } = useParams();
 
   useEffect(() => {
     fetch("/data/products.json")
@@ -14,7 +18,7 @@ export const ItemDetailContainer = () => {
         return res.json();
       })
       .then((data) => {
-        const found = data.find((p) => p.id === "4");
+        const found = data.find((p) => p.id === id);
         if (found) {
           setDetail(found);
         } else {
@@ -24,7 +28,7 @@ export const ItemDetailContainer = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [id]); // Array de dependencias
 
   return (
     <main>

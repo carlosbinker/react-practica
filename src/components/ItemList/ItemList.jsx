@@ -1,19 +1,26 @@
-// La función de este componente intermedio será sólo la de ver si se mapea algo o no 
-
+import { Link } from "react-router-dom";
 import { Item } from "../Item/Item";
 
-// Por lo tanto la presentación del artículo se le pasará al componente Item
-export const ItemList = ({ lista }) => {
-    return (
-        <>
-            {lista.length ? (
-                lista.map((prod) =>
-                    <Item key={prod.id} {...prod}>
-                        <button>Soy un botón</button>
-                    </Item>)
-                
-            ) : <p>No hay productos</p>}
-        </>
-    );
-}
+export const ItemList = ({ list }) => {
+  //pasamos el button como children, no es obligatorio
 
+  return (
+    <>
+      {list.length ? (
+        list.map((prod) => (
+          //como yo reutilizo Item en el detalle, no quiero conflictos de "click"
+          //al tocar el boton de "agregar al carrito" y se clickee tambien la card
+
+          //Por eso para evitar poner Link en Item, venimos a ItemList y pasamos
+          //Link en el mapeo, con su key, ya que la key va en el componente que retorne el mapeo
+          //(y ahora no es Item, sino Link)
+          <Link to={`/detail/${prod.id}`} key={prod.id}>
+            <Item {...prod} />
+          </Link>
+        ))
+      ) : (
+        <p>No hay productos</p>
+      )}
+    </>
+  );
+};

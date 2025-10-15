@@ -33,7 +33,7 @@ export const ItemlistContainer = ({titulo}) => {
 
         <section>
             <h1>{titulo}</h1>
-            <ItemList lista={products} />
+            <ItemList list={products} />
         </section>
 
     );

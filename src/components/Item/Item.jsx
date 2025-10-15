@@ -1,17 +1,18 @@
-//recordamos el uso del children, no es obligatorio que esté
+import { Link } from "react-router-dom";
 import "./Item.css";
 
 export const Item = ({ name, price, description, imageUrl, children }) => {
-    return (
-        <>       
-            {/* Utilizo una key para que cada article esté identificado de manera única en el dom y va en el padre! */}
-            <article className="product-item">
-               <img src={imageUrl} alt={description} /> 
-                <h2 className="product-title">{name}</h2>
-                <p>Precio: {price}</p>
-                <p>Descripción: {description}</p>
-                {children}
-            </article>
-        </>
-    );
-}
+  //recordamos el uso del children, no es obligatorio que este
+
+  //Si este componente usara children ni botones que generen conflictos,
+  // podrian envolver aca con Link (agregando el uso de props "id")
+  return (
+    <article className="product-item">
+      <img src={imageUrl} alt={description} />
+      <h2 className="product-title">{name}</h2>
+      <p>Precio: ${price}</p>
+      <p>Descripcion{description}</p>
+      {children}
+    </article>
+  );
+};
