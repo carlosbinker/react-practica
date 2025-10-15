@@ -1,20 +1,20 @@
-// Componente presentacional (no tiene lógica)
-// El componente switch de JS es similar al match de Python
-// Esto es una SPA, por lo tanto se van a estar intercambiando vistas y componenetes. Se montan y dsmontan componentes.
+import { Link } from "react-router-dom";
+
 export const Nav = () => {
-    return (
-        <nav>
-            <ul>
-                <li>
-                    <a href="./#">Home</a>
-                </li>
-                <li>
-                    <a href="./#">DLC</a>
-                </li>
-                <li>
-                    <a href="./#">Juegos</a>
-                </li>
-            </ul>
-        </nav>
-    );
-}
+  //Dejamos los Link preparados para cuando hagamos filtrado por categoria
+  //Por ahora, quedan de vista, pero sirven al tocar para escribir la ruta
+  //en la barra de búsqueda
+  return (
+    <nav>
+      <ul>
+        <li></li>
+        <li>
+          <Link to={"/category/salado"}>Salado</Link>
+        </li>
+        <li>
+          <Link to={"/category/dulce"}>Dulce</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
