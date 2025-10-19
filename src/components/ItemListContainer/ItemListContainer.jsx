@@ -35,7 +35,7 @@ export const ItemListContainer = ({titulo}) => {
 
         <section>
             <h1>{titulo}</h1>
-            <ItemList list={products} /> // Le pasa los productos a ItemList para que se encargue de cómo mostrarlos 
+            <ItemList list={products} /> 
         </section>
 
     );
