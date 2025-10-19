@@ -3,7 +3,8 @@ import './App.css'
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import { ItemlistContainer } from './components/ItemListContainer/ItemListContainer';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { CartProvider } from './context/CartContext/CartProvider';
 
 function App() {
   
@@ -11,17 +12,19 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div>
-          <Header /> 
-          <Routes>
-            <Route path="/" element={<ItemlistContainer titulo={"Bienvenidos"}/>}/>
-            <Route path="/detail/:id" element={<ItemDetailContainer/>}/>             
-          </Routes>
-          <Footer />
-        </div>
+        <CartProvider>
+          <div>
+            <Header /> 
+              <Routes>
+                <Route path="/" element={<ItemListContainer titulo={"Bienvenidos"}/>}/>
+                <Route path="/detail/:id" element={<ItemDetailContainer/>}/>             
+              </Routes>
+            <Footer />  
+          </div> 
+        </CartProvider>
       </BrowserRouter>
     </>
   );
 }
 
-export default App
+export default App;

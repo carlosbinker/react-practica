@@ -9,8 +9,7 @@ export const ItemList = ({ list }) => {
       {list.length ? (
         list.map((prod) => (
           //como yo reutilizo Item en el detalle, no quiero conflictos de "click"
-          //al tocar el boton de "agregar al carrito" y se clickee tambien la card
-
+          //al tocar el boton de "agregar al carrito" y que se clickee tambien la card
           //Por eso para evitar poner Link en Item, venimos a ItemList y pasamos
           //Link en el mapeo, con su key, ya que la key va en el componente que retorne el mapeo
           //(y ahora no es Item, sino Link)

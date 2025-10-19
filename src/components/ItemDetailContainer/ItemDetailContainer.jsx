@@ -14,7 +14,6 @@ export const ItemDetailContainer = () => {
         if (!res.ok) {
           throw new Error("No se encontro el producto");
         }
-
         return res.json();
       })
       .then((data) => {
