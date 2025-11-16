@@ -15,7 +15,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## 1. Mockapi
 
-En mi primer lugar debo abrirme una cuenta en Mockapi. Yo utilicé mi cuenta de Github, por lo tanto al loguearme me aparece la siguiente pantalla:
+En primer lugar debo abrirme una cuenta en Mockapi. Yo utilicé mi cuenta de Github, por lo tanto al loguearme me aparece la siguiente pantalla:
 
 __Logueo en MockAPI__: 
 
