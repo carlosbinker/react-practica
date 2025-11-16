@@ -6,12 +6,18 @@
 //3) Yo me encargo de mostrarteló en la góndola en una card por ejemplo. Va haciendo como una especie de 'pasamanos' en cuanto 
 // al manejo de las responsablidades. Resulta más sencillo luego encontrar un error.
 //el componente 2 (ItemList) tendrá la responsabilidad de mapear lo que se va a mostrar o no. Tal vez no haya nada que mostrar
-import { useEffect, useState } from "react";
+import { useEffect, useState, } from "react";
 import { ItemList } from "../ItemList/ItemList";
+// Importo usePArams para manejar las categorías 
+import { useParams } from "react-router-dom";
 
 export const ItemListContainer = ({titulo}) => {
     
     const [products, setProducts] = useState([]);
+
+    // Desestructuro lo que me viene por useParams y lo llamo category que podrá ser dulce o salado de acuerdo a la nav y
+    // a la propiedad category dentro de products.json
+    const { category } = useParams();
 
     useEffect(() => {
         fetch("/data/products.json")
@@ -22,12 +28,19 @@ export const ItemListContainer = ({titulo}) => {
                 return res.json(); // Retorno un objeto javascript que lo captura en el siguiente then con data
             })
             .then((data) => {
-                setProducts(data);
+                if (category)
+                {
+                    const dataFiltered = data.filter((prod) => prod.category === category);
+                    setProducts(dataFiltered);
+                } else {
+                    setProducts(data);
+                };
+               
             })
             .catch((err) => {
                 console.log(err);
             });
-    }, []);
+    }, [category]);
     // Recordar que en el useEffect debe estar aunque sea vacío como segundo argumento un array
     // IMPORTANTE: Itemlist no lo tenemos que tocar, seguirá haciendo lo que ya hacía!
    

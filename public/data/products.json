@@ -34,7 +34,7 @@
   {
     "id": "5",
     "name": "Pancakes",
-    "category": "Dulce",
+    "category": "dulce",
     "price": 10900,
     "description": "Riquísimo panqueque bañado en cocolate aromatizado con vainilla de Chipre y Pakistán",
     "imageUrl": "/images/pancakes.jpg"

@@ -4,7 +4,7 @@ import { Nav } from "../Nav/Nav";
 // Acá se opta por poner la nav dentro del header
 export const Header = () => {
     return (<header>
-        <Link to={"/"}>LOGO</Link>
+        <Link to={"/"}><h2>LOGO</h2></Link>
         <Nav />
     </header>);
 };
