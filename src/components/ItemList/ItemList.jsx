@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { Item } from "../Item/Item";
 
+import "./ItemList.css"
+
 export const ItemList = ({ list }) => {
   //pasamos el button como children, no es obligatorio
 
   return (
-    <>
+    <div className="item-list-container">
       {list.length ? (
         list.map((prod) => (
           //como yo reutilizo Item en el detalle, no quiero conflictos de "click"
@@ -20,6 +22,6 @@ export const ItemList = ({ list }) => {
       ) : (
         <p>No hay productos</p>
       )}
-    </>
+    </div>
   );
 };

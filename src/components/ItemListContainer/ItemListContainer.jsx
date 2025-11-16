@@ -33,7 +33,7 @@ export const ItemListContainer = ({titulo}) => {
    
     return (
 
-        <section>
+        <section className="container">
             <h1>{titulo}</h1>
             <ItemList list={products} /> 
         </section>
