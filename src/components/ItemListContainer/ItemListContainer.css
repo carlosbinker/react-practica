@@ -1,3 +1,10 @@
+.container {
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: stretch; /* <--- CRÍTICO: Estira los ítems flexibles */
+  gap: 10px;
+}
+
 .container h1 {
   text-align: center;
   padding: 3rem;
