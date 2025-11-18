@@ -7,7 +7,7 @@ export const ItemList = ({ list }) => {
   //pasamos el button como children, no es obligatorio
 
   return (
-    <div className="item-list-container">
+    <div className="item-list">
       {list.length ? (
         list.map((prod) => (
           //como yo reutilizo Item en el detalle, no quiero conflictos de "click"
