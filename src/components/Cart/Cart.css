@@ -1,7 +1,18 @@
+.item-list-container{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  align-items: stretch; /* <--- CRÍTICO: Estira los ítems flexibles */
+  gap: 1rem;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  margin-bottom: 60px;
+}
+
 .item-list-container h2 {
   width: 100%;
   text-align: center;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .btn-container {
