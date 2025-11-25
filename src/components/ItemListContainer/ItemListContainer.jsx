@@ -1,49 +1,24 @@
-// Arrow Function Snippets es una extención para escribir menos !
-//Este componente va a ser un contenedor que tendrá una lista de componentes. Este componente tiene la lógica necesaria 
-// para recibir un listado de elementos, en principio desde un Json local y luego a través de una API
-//La idea es separar las responsabilidades. Que este componente no haga todas las funciones juntas
-//1) Yo me encargo de pedir, 2) Yo me encargo de desarmar el palet 
-//3) Yo me encargo de mostrarteló en la góndola en una card por ejemplo. Va haciendo como una especie de 'pasamanos' en cuanto 
-// al manejo de las responsablidades. Resulta más sencillo luego encontrar un error.
-//el componente 2 (ItemList) tendrá la responsabilidad de mapear lo que se va a mostrar o no. Tal vez no haya nada que mostrar
+// Simplifico ItemListContainer, en vez del fetch usa la función getProducts
 import { useEffect, useState, } from "react";
 import { ItemList } from "../ItemList/ItemList";
 // Importo usePArams para manejar las categorías 
 import { useParams } from "react-router-dom";
+import {getProducts} from "../../services/products/"
+import "./ItemListContainer.css";
 
-export const ItemListContainer = ({titulo}) => {
+export const ItemListContainer = ({ titulo }) => {
     
     const [products, setProducts] = useState([]);
 
     // Desestructuro lo que me viene por useParams y lo llamo category que podrá ser dulce o salado de acuerdo a la nav y
-    // a la propiedad category dentro de products.json
+    // a la propiedad category dentro del array products.json en MOCKAPI!
     const { category } = useParams();
 
     useEffect(() => {
-        // fetch("/data/products.json")
-        fetch("https:///691a278f9ccba073ee95086c.mockapi.io/products")
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error("Hubo un problema al buscar productos");
-                }
-                return res.json(); // Retorno un objeto javascript que lo captura en el siguiente then con data
-            })
-            .then((data) => {
-                if (category)
-                {
-                    const dataFiltered = data.filter((prod) => prod.category === category);
-                    setProducts(dataFiltered);
-                } else {
-                    setProducts(data);
-                };
-               
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        getProducts(category)
+            .then((data) => setProducts(data))
+            .catch((err) => console.log(err));
     }, [category]);
-    // Recordar que en el useEffect debe estar aunque sea vacío como segundo argumento un array
-    // IMPORTANTE: Itemlist no lo tenemos que tocar, seguirá haciendo lo que ya hacía!
    
     return (
 
@@ -51,6 +26,5 @@ export const ItemListContainer = ({titulo}) => {
             <h1>{titulo}</h1>
             <ItemList list={products} /> 
         </section>
-
     );
 }
