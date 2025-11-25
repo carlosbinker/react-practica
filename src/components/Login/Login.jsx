@@ -4,11 +4,11 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 export const Login = () => {
     const [userForm, setUserForm] = useState({ name: "", password: "" });
-    const [user, login] = useAuthContext();
+    const { user, login } = useAuthContext();
     const navigate = useNavigate();
 
     if (user) {
-        return <Navigate to="/admin/alta-productos" replace />;
+        return <Navigate to="/admin/alta-productos" replace/>;
     }
 
     const handleChange = (e) => {
@@ -31,7 +31,7 @@ export const Login = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="session-form" onSubmit={handleSubmit}>
             <h2>Iniciar sesión</h2>
             <div>
                 <label htmlFor="user">Usuario</label>

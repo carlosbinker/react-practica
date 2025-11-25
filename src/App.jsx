@@ -17,9 +17,10 @@ function App() {
     <>
       <BrowserRouter>
         <CartProvider>
-          <div>
+          {/* <div> */}
                 {/* Dejamos fuera del Routes lo que queremos que no se vuelva a renderizar al navegar. Acá fue el header*/}
             <Routes>
+
               <Route element={<MainLayout/>}>
                 <Route path="/" element={<ItemListContainer titulo={"Bienvenidos"}/>}/>
                 <Route path="/detail/:id" element={<ItemDetailContainer />} />  
@@ -29,19 +30,19 @@ function App() {
                 
               {/* <Route path="/admin" element={<ProductFormContainer />} /> */}
               
-              <Route path="/admin" element={<AdminLayout />}>
-                {/* Ruta anidada va sin la / */}
+              <Route path="/admin" element={<AdminLayout/>}>
+              {/*Ruta anidada va sin la / y el index indica que al escribir /admin el primer componente que se monta es el Login*/}
                 <Route index element={<Login/> } />
                 <Route path="alta-productos" element={
                   <RutaProtegida>
                     <ProductFormContainer />
                   </RutaProtegida>
-                }
-                />
+                }/>
               </Route>
+
             </Routes>
                 {/* Dejamos fuera del Routes lo que queremos que no se vuelva a renderizar al navegar. Acá fue el footer */} 
-          </div> 
+          {/* </div>  */}
         </CartProvider>
       </BrowserRouter>
     </>
