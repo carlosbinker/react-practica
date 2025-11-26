@@ -1,21 +1,24 @@
-import { useEffect, useState} from "react";
-import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { getProductById } from "../../services/products";
+
+import "./ItemDetailContainer.css";
 
 export const ItemDetailContainer = () => {
   const [detail, setDetail] = useState({});
+  
+  //Desestructuramos el objeto del useParams
+  //la clave coincide con el nombre que definimos en Route -> :id
+  const {id} = useParams();
 
-  // Capturo el id de la URL dinámica
-  const { id } = useParams();
+    useEffect(() => {
+      getProductById(id)
+        .then((data) => setDetail(data))
+        .catch((err) => console.log(err));
+      }, [id]);
 
-  useEffect(() => {
-    getProductById(id)
-      .then((data) => setDetail(data))
-      .catch((err) => console.log(err));
-  }, [id]); // Array de dependencias
-
-  return (
+ return (
     <main className="detail-container">
       {Object.keys(detail).length ? (
         <ItemDetail detail={detail} />
@@ -23,5 +26,6 @@ export const ItemDetailContainer = () => {
         <p>Cargando...</p>
       )}
     </main>
-  );
+ );
+
 };

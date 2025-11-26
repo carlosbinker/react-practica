@@ -1,7 +1,7 @@
 // Ahora agregamos la lógica de filtrado, de manera tal que se filtren en la API de Mockapi los productos. Esto se realiza 
 // mediante query strings
 
-const BASE_URL = "https:///691a278f9ccba073ee95086c.mockapi.io/products/";
+const BASE_URL = "https:///691a278f9ccba073ee95086c.mockapi.io/products";
 
 export const createProduct = async (product) => {
     const res = await fetch(BASE_URL, {
