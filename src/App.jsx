@@ -22,7 +22,7 @@ function App() {
             <Routes>
 
               <Route element={<MainLayout/>}>
-                <Route path="/" element={<ItemListContainer titulo={"Bienvenidos"}/>}/>
+                <Route path="/" element={<ItemListContainer titulo={"Bienvenidos al DELIVERY"}/>}/>
                 <Route path="/detail/:id" element={<ItemDetailContainer />} />  
                 <Route path="/carrito" element={<Cart />} />
                 <Route path="/category/:category" element={<ItemListContainer titulo={"Bienvenidos"} />} />
