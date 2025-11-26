@@ -37,7 +37,7 @@ export const getProducts = async (category) => {
 // Traer un elemento por id
 
 export const getProductById = async (id) => {
-    const res = await fetch(`${BASE_URL}/{id}`);
+    const res = await fetch(`${BASE_URL}/${id}`);
     if (!res.ok) {
         throw new Error("Error al obtener el producto");
     }
